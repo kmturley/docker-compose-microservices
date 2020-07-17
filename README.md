@@ -10,18 +10,37 @@ Example project using:
 
 Install dependencies using:
 
-    docker-compose build
+    docker-compose \
+        -f ./service-a/docker-compose.yml \
+        -f ./service-b/docker-compose.yml \
+        -f ./service-c/docker-compose.yml \
+        build
 
 
 ## Usage
 
 Run the server:
 
-    docker-compose up
+    docker-compose \
+        -f ./service-a/docker-compose.yml \
+        -f ./service-b/docker-compose.yml \
+        -f ./service-c/docker-compose.yml \
+        up
 
 View the frontend at:
 
     http://localhost:8080
+
+
+## Debugging
+
+View the merged compose config using:
+
+    docker-compose \
+        -f ./service-a/docker-compose.yml \
+        -f ./service-b/docker-compose.yml \
+        -f ./service-c/docker-compose.yml \
+        config
 
 
 ## Directory structure

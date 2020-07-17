@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+  service-b:
+    build: ${SERVICE_B:-.}
+    command: npm run dev
+    ports:
+      - "8081:8081"
+    volumes:
+      - ${SERVICE_B:-.}:/usr/src/app
+      - /usr/src/app/node_modules
