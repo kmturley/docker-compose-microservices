@@ -8,23 +8,24 @@ Example project using:
 
 ## Installation
 
-Install dev dependencies using:
+Ensure the `.env` file contains correct paths to your services:
 
-    docker-compose \
-        -f ./service-a/docker-compose.dev.yml \
-        -f ./service-b/docker-compose.dev.yml \
-        -f ./service-c/docker-compose.dev.yml \
-        build
+    COMPOSE_FILE_SEPARATOR=:
+    COMPOSE_FILE=./service-a/docker-compose.dev.yml:./service-b/docker-compose.dev.yml:./service-c/docker-compose.dev.yml
+    SERVICE_A=../service-a
+    SERVICE_B=../service-b
+    SERVICE_C=../service-c
+
+Then install dependencies using:
+
+    docker-compose build
+
 
 ## Usage
 
 Run the server in dev mode:
 
-    docker-compose \
-        -f ./service-a/docker-compose.dev.yml \
-        -f ./service-b/docker-compose.dev.yml \
-        -f ./service-c/docker-compose.dev.yml \
-        up
+    docker-compose up
 
 View the frontend at:
 
@@ -35,11 +36,7 @@ View the frontend at:
 
 View the merged compose config using:
 
-    docker-compose \
-        -f ./service-a/docker-compose.dev.yml \
-        -f ./service-b/docker-compose.dev.yml \
-        -f ./service-c/docker-compose.dev.yml \
-        config
+    docker-compose config
 
 
 ## Directory structure
@@ -50,15 +47,3 @@ View the merged compose config using:
 ## Contact
 
 For more information please contact kmturley
-
-
-## Notes
-
-Create service in sub directories using the tutorial at:
-https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
-
-"when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies."
-https://docs.npmjs.com/cli/install#description
-
-"One of the simplest things you can do to improve performance is to set NODE_ENV to “production.”"
-https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production
