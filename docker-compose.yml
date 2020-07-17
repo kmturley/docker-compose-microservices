@@ -1,7 +1,10 @@
 version: '3'
 services:
   service-a:
-    build: ./service-a/.
+    build: ./service-a
+    command: npm run dev
     ports:
       - "8080:8080"
-    command: npm run dev
+    volumes:
+      - ./service-a:/usr/src/app
+      - /usr/src/app/node_modules
