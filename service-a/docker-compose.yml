@@ -3,9 +3,7 @@ services:
 
   service-a:
     build: ${SERVICE_A:-.}
-    command: npm run dev
     ports:
       - "8080:8080"
-    volumes:
-      - ${SERVICE_A:-.}:/usr/src/app
-      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=production

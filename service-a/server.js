@@ -2,13 +2,15 @@
 
 const express = require('express');
 
+const ENV = process.env.NODE_ENV;
 const PORT = 8080;
 const HOST = '0.0.0.0';
+const NAME = 'Service A';
 
 const app = express();
 app.get('/', (req, res) => {
-  res.send('This is Service A!');
+  res.send(`This is ${NAME}, running in ${ENV} mode!`);
 });
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`${NAME} is running in ${ENV} mode`);

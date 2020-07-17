@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  service-b-dev:
+    build: ${SERVICE_B:-.}
+    command: npm run dev
+    ports:
+      - "8081:8080"
+    volumes:
+      - ${SERVICE_B:-.}:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
