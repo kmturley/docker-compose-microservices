@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  service-a-dev:
+    build: ${${TEMPLATE_NAME}:-.}
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${${TEMPLATE_NAME}:-.}:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development

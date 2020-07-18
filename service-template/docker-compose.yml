@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  service-a:
+    build: ${${TEMPLATE_NAME}:-.}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
