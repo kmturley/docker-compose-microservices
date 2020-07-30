@@ -1,13 +1,13 @@
 version: '3'
 services:
 
-  service-a-dev:
-    build: ${SERVICE_A:-.}
+  service-node-dev:
+    build: ${SERVICE_NODE:-.}
     command: npm run dev
     ports:
       - "8080:8080"
     volumes:
-      - ${SERVICE_A:-.}:/usr/src/app
+      - ${SERVICE_NODE:-.}:/usr/src/app
       - /usr/src/app/node_modules
     environment:
       - NODE_ENV=development

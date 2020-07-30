@@ -5,7 +5,7 @@ const express = require('express');
 const ENV = process.env.NODE_ENV;
 const PORT = 8080;
 const HOST = '0.0.0.0';
-const NAME = 'Service A';
+const NAME = 'Service Node';
 
 const app = express();
 app.get('/', (req, res) => {

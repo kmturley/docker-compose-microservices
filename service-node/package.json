@@ -1,7 +1,7 @@
 {
-  "name": "service-a",
+  "name": "service-node",
   "version": "1.0.0",
-  "description": "Service A",
+  "description": "Service Node",
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
   "scripts": {
