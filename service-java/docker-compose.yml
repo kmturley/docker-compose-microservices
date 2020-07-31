@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  service-java-dev:
+    image: maven:3.6.3-jdk-8
+    command: mvn spring-boot:run
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/mymaven:rw
+    working_dir: /usr/src/mymaven
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev

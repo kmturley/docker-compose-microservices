@@ -1,8 +1,8 @@
 version: '3'
 services:
 
-  service-b:
-    build: ${SERVICE_B:-.}
+  service-node:
+    build: ${SERVICE_NODE:-.}
     ports:
       - "8081:8080"
     environment:

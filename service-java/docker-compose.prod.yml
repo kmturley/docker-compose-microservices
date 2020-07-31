@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  service-java:
+    build: ${SERVICE_JAVA:-.}
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
