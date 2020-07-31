@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - .:/usr/src/mymaven:rw
+      - ${SERVICE_JAVA:-.}:/usr/src/mymaven
     working_dir: /usr/src/mymaven
     environment:
       - SPRING_PROFILES_ACTIVE=dev

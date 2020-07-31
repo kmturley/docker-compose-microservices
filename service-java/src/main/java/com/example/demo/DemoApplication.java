@@ -15,7 +15,7 @@ public class DemoApplication {
 	}
 
   @GetMapping("/")
-    public String hello(@RequestParam(value = "name", defaultValue = "Java") String name) {
+    public String hello(@RequestParam(value = "name", defaultValue = "Service Java") String name) {
     return String.format("This is %s, running in %s mode!", name, System.getenv("SPRING_PROFILES_ACTIVE"));
   }
 
