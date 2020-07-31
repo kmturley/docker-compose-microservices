@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  service-python:
+    build: ${SERVICE_PYTHON:-.}
+    ports:
+      - "8082:8080"
+    environment:
+      - FLASK_ENV=production

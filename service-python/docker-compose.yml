@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  service-python-dev:
+    build: ${SERVICE_PYTHON:-.}
+    command: python server.py
+    ports:
+      - "8082:8080"
+    volumes:
+      - ${SERVICE_PYTHON:-.}:/usr/src/app
+    environment:
+      - FLASK_ENV=development

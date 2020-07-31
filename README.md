@@ -11,9 +11,10 @@ Example project using:
 Ensure the `.env` file contains correct paths to your services:
 
     COMPOSE_FILE_SEPARATOR=:
-    COMPOSE_FILE=./service-node/docker-compose.dev.yml:./service-java/docker-compose.dev.yml
+    COMPOSE_FILE=./service-node/docker-compose.yml:./service-java/docker-compose.yml:./service-python/docker-compose.yml
     SERVICE_NODE=../service-node
     SERVICE_JAVA=../service-java
+    SERVICE_PYTHON=../service-python
 
 Then install dependencies using:
 
